@@ -1,0 +1,223 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: radial-gradient(circle at top, #1a1a2e, #0a0f29); /* Cosmic Background */
+    background-attachment: fixed;
+    text-align: center;
+    color: #EAE0D5;
+}
+
+/* Animated Stars */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 225%;
+    background: url('star1.webp');
+    opacity: 0.2;
+    z-index: -1;
+    animation: starsMove 20s linear infinite;
+}
+
+@keyframes starsMove {
+    0% { background-position: 0 0; }
+    100% { background-position: -1000px 1000px; }
+}
+
+/* Glowing Navbar */
+.navbar {
+    background-color: rgba(27, 31, 59, 0.9);
+    padding: 15px 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 0 20px rgba(173, 216, 230, 0.5);
+}
+
+.navbar a {
+    color: #B5838D;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar a:hover {
+    background: #E63946;
+    box-shadow: 0 0 15px #E63946;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .navbar a {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+
+/* Profile Section with Hover Effect */
+.profile {
+    background: rgba(27, 31, 59, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 120px auto 40px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(230, 57, 70, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+.profile img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #B5838D;
+    box-shadow: 0 0 15px #B5838D;
+}
+
+/* Profile Info */
+.profile-info {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin: 10px auto;
+    width: 90%;
+}
+
+.profile-info li {
+    padding: 5px 0;
+    font-size: 16px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Interests Section */
+.interests {
+    background: rgba(27, 31, 59, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 20px rgba(173, 216, 230, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.interests ul {
+    list-style: none;
+    padding: 0px;
+}
+
+.interests li {
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 5px;
+    color: white;
+}
+
+.interests:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+/* About Me Section */
+.about {
+    background: rgba(27, 31, 59, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px;
+    width: 80%;
+    max-width: 400px;
+    box-shadow: 0 0 25px rgba(173, 216, 230, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+/* Interests & About Me (Wider Sections) */
+#interests, #about {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.column {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Why Someone Should Date Me Section */
+.why-date-me {
+    background: rgba(27, 31, 59, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 600px;
+    box-shadow: 0 0 25px rgba(173, 216, 230, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.why-date-me p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.why-date-me:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.7);
+}
+
+/* like Button */
+.like {
+    margin: 20px;
+}
+
+.like-btn {
+    padding: 12px 18px;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 18px;
+    background: linear-gradient(45deg, #E63946, #B5838D);
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 100, 100, 0.8);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.like-btn:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.9);
+    transform: scale(1.1);
+}
